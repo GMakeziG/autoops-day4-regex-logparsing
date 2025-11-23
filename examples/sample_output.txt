@@ -1,0 +1,71 @@
+Section 1 -- Example extracted IPs
+
+192.168.1.14
+203.44.22.51
+10.0.0.55
+185.33.144.12
+192.168.1.14
+172.16.4.22
+89.200.14.5
+66.77.88.99
+172.16.4.22
+37.187.74.71
+118.122.91.33
+192.168.1.14
+89.200.14.5
+102.22.9.44
+203.44.22.51
+172.16.4.22
+
+Section 2 -- Example failed login lines
+
+Nov 17 07:17:45 ubuntu-server sshd[1023]: Failed password for invalid user admin from 203.44.22.51 port 44681 ssh2
+Nov 17 07:18:02 ubuntu-server sshd[1042]: Failed password for root from 10.0.0.55 port 41022 ssh2
+Nov 17 07:20:33 ubuntu-server sshd[1042]: Invalid user test from 185.33.144.12 port 33872 ssh2
+Nov 17 07:21:10 ubuntu-server sshd[1042]: Failed password for ninjatronics from 192.168.1.14 port 55402 ssh2
+Nov 17 07:25:33 ubuntu-server sshd[1088]: Failed password for ubuntu from 89.200.14.5 port 45877 ssh2
+Nov 17 07:27:10 ubuntu-server sshd[1101]: Failed password for invalid user oracle from 66.77.88.99 port 60222 ssh2
+Nov 17 07:32:01 ubuntu-server sshd[1120]: Failed password for root from 37.187.74.71 port 51144 ssh2
+Nov 17 07:33:11 ubuntu-server sshd[1120]: Failed password for invalid user guest from 118.122.91.33 port 42210 ssh2
+Nov 17 07:36:55 ubuntu-server sshd[1154]: Failed password for ubuntu from 89.200.14.5 port 45877 ssh2
+Nov 17 07:40:12 ubuntu-server sshd[1183]: Invalid user service from 102.22.9.44 port 54491 ssh2
+Nov 17 07:42:19 ubuntu-server sshd[1183]: Failed password for invalid user ftp from 203.44.22.51 port 44681 ssh2
+
+Section 3 -- Example cleaned logs (sed output)
+
+Nov 17 07:15:21 ubuntu-server sshd[1023]: Accepted password for ninjatronics from 192.168.1.14 port 55402 ssh2
+Nov 17 07:17:45 ubuntu-server sshd[1023]: Failed password for invalid user admin from 203.44.22.51 port 44681 ssh2
+Nov 17 07:18:02 ubuntu-server sshd[1042]: Failed password for root from 10.0.0.55 port 41022 ssh2
+Nov 17 07:20:33 ubuntu-server sshd[1042]: Invalid user test from 185.33.144.12 port 33872 ssh2
+Nov 17 07:21:10 ubuntu-server sshd[1042]: Failed password for ninjatronics from 192.168.1.14 port 55402 ssh2
+Nov 17 07:23:54 ubuntu-server sshd[1088]: Accepted publickey for ubuntu from 172.16.4.22 port 60212 ssh2
+Nov 17 07:25:33 ubuntu-server sshd[1088]: Failed password for ubuntu from 89.200.14.5 port 45877 ssh2
+Nov 17 07:27:10 ubuntu-server sshd[1101]: Failed password for invalid user oracle from 66.77.88.99 port 60222 ssh2
+Nov 17 07:29:45 ubuntu-server sshd[1101]: Accepted password for ubuntu from 172.16.4.22 port 60212 ssh2
+Nov 17 07:32:01 ubuntu-server sshd[1120]: Failed password for root from 37.187.74.71 port 51144 ssh2
+Nov 17 07:33:11 ubuntu-server sshd[1120]: Failed password for invalid user guest from 118.122.91.33 port 42210 ssh2
+Nov 17 07:35:47 ubuntu-server sshd[1154]: Accepted password for ninjatronics from 192.168.1.14 port 55402 ssh2
+Nov 17 07:36:55 ubuntu-server sshd[1154]: Failed password for ubuntu from 89.200.14.5 port 45877 ssh2
+Nov 17 07:40:12 ubuntu-server sshd[1183]: Invalid user service from 102.22.9.44 port 54491 ssh2
+Nov 17 07:42:19 ubuntu-server sshd[1183]: Failed password for invalid user ftp from 203.44.22.51 port 44681 ssh2
+Nov 17 07:43:56 ubuntu-server sshd[1209]: Accepted publickey for ninjatronics from 172.16.4.22 port 60212 ssh2
+
+Section 4 -- Example summary output (awk)
+
+Nov 07:15:21 ninjatronics
+Nov 07:17:45 invalid
+Nov 07:18:02 root
+Nov 07:20:33 from
+Nov 07:21:10 ninjatronics
+Nov 07:23:54 ubuntu
+Nov 07:25:33 ubuntu
+Nov 07:27:10 invalid
+Nov 07:29:45 ubuntu
+Nov 07:32:01 root
+Nov 07:33:11 invalid
+Nov 07:35:47 ninjatronics
+Nov 07:36:55 ubuntu
+Nov 07:40:12 from
+Nov 07:42:19 invalid
+Nov 07:43:56 ninjatronics
+
