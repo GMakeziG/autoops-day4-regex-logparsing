@@ -29,7 +29,7 @@ autoops-day4-regex-logparsing/
 │ └── auth.log
 │
 └── examples/
-└── sample_output.txt
+  └── sample_output.txt
 
 
 ```
