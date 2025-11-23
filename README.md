@@ -11,10 +11,10 @@ You will practice using:
 
 These labs help you extract IPs, usernames, timestamps, error patterns, and build automated log filters.
 
-```
+
 
 ## 📁 Folder Structure
-
+```
 autoops-day4-regex-logparsing/
 │
 ├── README.md
@@ -30,8 +30,6 @@ autoops-day4-regex-logparsing/
 │
 └── examples/
   └── sample_output.txt
-
-
 ```
 
 ## 🧪 Included Labs
